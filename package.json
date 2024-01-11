@@ -1,8 +1,8 @@
 {
-  "name": "Location-Tracking-System",
+  "name": "Location-Tracking-System-Vendor-Data",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/c82guochen/Location-Tracking-System.git",
+  "repository": "https://github.com/c82guochen/Location-Tracking-System-Vendor-Data.git",
   "author": "Chen Guo <c82guo@uwaterloo.ca>",
   "license": "MIT",
   "scripts": {

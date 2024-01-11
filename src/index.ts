@@ -23,6 +23,8 @@ const init = async () => {
     // AttributeName意为属性，AttributeType意为属性的类型是 'S'，表示字符串类型。
       { AttributeName: 'twitterId', AttributeType: 'S' },
     ],
+    // ProvisionedThroughput 属性指定了表的预配读写能力。
+    // ReadCapacityUnits 和 WriteCapacityUnits 分别定义了表每秒钟能够处理的最大读和写操作的数量。
     ProvisionedThroughput: {
       ReadCapacityUnits: 10,
       WriteCapacityUnits: 10,
@@ -55,4 +57,4 @@ init();
 //优化：
 // 1、创建已存在的表，返回已创建的表的基本信息
 // 2、describe不存在的表，若不存在则创建它
-// （注意异步问题！！不仅要用await和async，还要把throw error改成return error，不然出错会卡主await）
+// （注意异步问题！！不仅要用await和async，还要把throw error改成return error，不然出错会卡住await）
