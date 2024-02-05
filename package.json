@@ -8,11 +8,10 @@
   "scripts": {
     "start": "node \"build/index.js\""
   },
-
   "dependencies": {
-    "@aws-sdk/util-dynamodb": "^3.458.0",
-    "aws-sdk": "^2.1504.0",
-    "dotenv": "^16.3.1"
+    "@aws-sdk/util-dynamodb": "^3.507.0",
+    "aws-sdk": "^2.1551.0",
+    "dotenv": "^16.4.1"
   },
   "devDependencies": {
     "typescript": "^5.3.2"

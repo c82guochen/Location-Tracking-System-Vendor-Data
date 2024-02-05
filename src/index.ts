@@ -48,12 +48,12 @@ const init = async () => {
     // dynamodbDeleteRecord(TABLE_NAME_CONST, vendor_id);
 
     // 7 - Delete all data
-    for (const vendorData of vendors) {
-        const res = dynamodbDeleteRecord(TABLE_NAME_CONST, vendorData.twitterId);
-        if (res instanceof Error) {
-            console.log('Error', vendorData, res);
-        }
-    }
+    // for (const vendorData of vendors) {
+    //     const res = dynamodbDeleteRecord(TABLE_NAME_CONST, vendorData.twitterId);
+    //     if (res instanceof Error) {
+    //         console.log('Error', vendorData, res);
+    //     }
+    // }
     
 };
 
