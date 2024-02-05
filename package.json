@@ -1,0 +1,20 @@
+{
+  "name": "Location-Tracking-System-Vendor-Data",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/c82guochen/Location-Tracking-System-Vendor-Data.git",
+  "author": "Chen Guo <c82guo@uwaterloo.ca>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node \"build/index.js\""
+  },
+
+  "dependencies": {
+    "@aws-sdk/util-dynamodb": "^3.458.0",
+    "aws-sdk": "^2.1504.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.2"
+  }
+}
