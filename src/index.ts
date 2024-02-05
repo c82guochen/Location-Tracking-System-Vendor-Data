@@ -1,16 +1,25 @@
-import { dynamodbCreateTable } from './aws';
+import { dynamodbCreateTable, dynamodbDescribeTable } from './aws';
 
-const vendorsTestTableParams: AWS.DynamoDB.CreateTableInput = {
-    TableName: 'vendors',
+const init = async () => {
+    const TABLE_NAME_CONST = 'vendors';
     // primary key and related type,HASH means unique
-    KeySchema: [{ AttributeName: 'twitterId', KeyType: 'HASH' }],
-    AttributeDefinitions: [
+    const vendorsTestTableParams: AWS.DynamoDB.CreateTableInput = {
+        TableName: TABLE_NAME_CONST,
+        KeySchema: [{ AttributeName: 'twitterId', KeyType: 'HASH' }],
+        AttributeDefinitions: [
         { AttributeName: 'twitterId', AttributeType: 'S' },
-    ],
-    ProvisionedThroughput: {
+        ],
+        ProvisionedThroughput: {
         ReadCapacityUnits: 10,
         WriteCapacityUnits: 10,
-    },
+        },
+    };
+
+    // 1 - create table
+    //   dynamodbCreateTable(vendorsTestTableParams);
+
+    // 2 - describe table
+    dynamodbDescribeTable(TABLE_NAME_CONST);
 };
 
-dynamodbCreateTable(vendorsTestTableParams);
+init();
