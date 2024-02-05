@@ -34,4 +34,19 @@ export const dynamodbDescribeTable = async (tableName: string) => {
       console.error(error);
       throw new Error('dynamodbDescribeTable error');
     }
+};
+  
+
+// 3 - Delete a table
+export const dynamodbDeleteTable = async (tableName: string) => {
+    try {
+      const res = await dynamodb
+        .deleteTable({ TableName: tableName })
+        .promise();
+      console.log('Table deleted', res);
+      return res;
+    } catch (error) {
+      console.error(error);
+      throw new Error('dynamodbDeleteTable error');
+    }
   };
