@@ -3,6 +3,7 @@ import {
     dynamodbDescribeTable,
     dynamodbDeleteTable,
     dynamodbCreateRecord,
+    dynamodbDeleteRecord,
   } from './aws';
   import vendors from './data/vendors';
 
@@ -31,8 +32,11 @@ const init = async () => {
     // dynamodbDeleteTable(TABLE_NAME_CONST);
 
     // 4 - Insert a record
-    const DUMMY_DATA = vendors[0];
-    dynamodbCreateRecord(TABLE_NAME_CONST, DUMMY_DATA);
+    // const DUMMY_DATA = vendors[0];
+    // dynamodbCreateRecord(TABLE_NAME_CONST, DUMMY_DATA);
+
+    const vendor_id = vendors[0].twitterId;
+    dynamodbDeleteRecord(TABLE_NAME_CONST, vendor_id);
 };
 
 init();

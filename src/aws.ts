@@ -67,4 +67,25 @@ export const dynamodbCreateRecord = async (
       console.error(error);
       throw new Error('dynamodbCreateRecord error');
     }
+};
+  
+export const dynamodbDeleteRecord = async (
+    tableName: string,
+    vendorId: string
+  ) => {
+    try {
+      const res = await dynamodb
+        .deleteItem({
+          TableName: tableName,
+          Key: {
+            'twitterId': { 'S': vendorId } // 假设 id 是表的主键，且其类型是字符串（S）
+          }
+        })
+        .promise();
+      console.log('Record deleted', res);
+      return res;
+    } catch (error) {
+      console.error(error);
+      throw new Error('dynamodbDeleteRecord error');
+    }
   };
