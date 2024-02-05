@@ -35,8 +35,19 @@ const init = async () => {
     // const DUMMY_DATA = vendors[0];
     // dynamodbCreateRecord(TABLE_NAME_CONST, DUMMY_DATA);
 
-    const vendor_id = vendors[0].twitterId;
-    dynamodbDeleteRecord(TABLE_NAME_CONST, vendor_id);
+    // 5 - Seed all data
+    for (const vendorData of vendors) {
+        const res = dynamodbCreateRecord(TABLE_NAME_CONST, vendorData);
+        if (res instanceof Error) {
+            console.log('Error', vendorData, res);
+        }
+    }
+    
+    // 6 - Delete a record
+    // const vendor_id = vendors[0].twitterId;
+    // dynamodbDeleteRecord(TABLE_NAME_CONST, vendor_id);
+
+
 };
 
 init();

@@ -69,16 +69,18 @@ export const dynamodbCreateRecord = async (
     }
 };
   
+// 5 - Delete a record
 export const dynamodbDeleteRecord = async (
     tableName: string,
     vendorId: string
   ) => {
     try {
+      // 注意格式！
       const res = await dynamodb
         .deleteItem({
           TableName: tableName,
           Key: {
-            'twitterId': { 'S': vendorId } // 假设 id 是表的主键，且其类型是字符串（S）
+            'twitterId': { 'S': vendorId } // twitterId 是表的主键，且其类型是字符串（S）
           }
         })
         .promise();
@@ -88,4 +90,5 @@ export const dynamodbDeleteRecord = async (
       console.error(error);
       throw new Error('dynamodbDeleteRecord error');
     }
-  };
+};
+  
